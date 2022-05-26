@@ -2,9 +2,10 @@
 
 ## Setting up for development
 1. Install node: https://nodejs.org/en/download/
-2. Install Angular CLI `npm install -g @angular/cli`
-3. Run `npm i` to install dependencies
-4. Run `npm start` to run dev server and launch electron application
+2. Install GitHub Desktop: https://desktop.github.com/
+3. Install Angular CLI `npm install -g @angular/cli`
+4. Run `npm i` to install dependencies
+5. Run `npm start` to run dev server and launch electron application
 
 
 ## Build
