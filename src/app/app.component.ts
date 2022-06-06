@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { AnimeApiService } from './anime-api.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,17 +8,11 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  constructor(private animeApi: AnimeApiService) {}
+
   title = 'anime-frontend';
 
-  constructor(private http: HttpClient) { }
-
-  ngOnInit(): void {
-    this.getStatus().subscribe((response) => {
-      console.log("Connected to backend!");
-    });
-  }
-
-  getStatus() {
-    return this.http.get("/api/anime/status");
+  ngOnInit(){
+    this.animeApi.getStatus();
   }
 }
