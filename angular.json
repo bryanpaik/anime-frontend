@@ -107,5 +107,8 @@
       }
     }
   },
-  "defaultProject": "anime-frontend"
+  "defaultProject": "anime-frontend",
+  "cli": {
+    "analytics": false
+  }
 }
