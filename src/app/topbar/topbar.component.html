@@ -1,43 +1,14 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
-      <!-- <link rel="stylesheet" href="topbar.component.scss"> -->
-    <title>Bootstrap Example</title>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
-        <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/watchlist" routerLinkActive="active">Watchlist</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/categories" routerLinkActive="active">Categories</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/friends" routerLinkActive="active">Friends</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/settings" routerLinkActive="active">Settings</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/search" routerLinkActive="active">Search</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-  </body>
-</html>
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <span><mat-icon>eco</mat-icon></span>
+
+  <div class="spacer"></div>
+
+  <div class="topbar-items">
+    <a mat-button routerLink="home">Home</a>
+    <a mat-button routerLink="categories">Categories</a>
+    <a mat-button routerLink="friends">Friends</a>
+    <a mat-button routerLink="search">Search</a>
+    <a mat-button routerLink="settings">Settings</a>
+  </div>
+    
+</mat-toolbar>
