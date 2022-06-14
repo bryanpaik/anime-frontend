@@ -6,12 +6,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { HomeComponent } from './home/home.component';
-import { FriendsComponent } from './friends/friends.component';
-import { CategoriesComponent } from './categories/categories.component';
-import { SearchComponent } from './search/search.component';
-import { SettingsComponent } from './settings/settings.component';
+import { HomeComponent } from './topbar/home/home.component';
+import { FriendsComponent } from './topbar/friends/friends.component';
+import { CategoriesComponent } from './topbar/categories/categories.component';
+import { SearchComponent } from './topbar/search/search.component';
+import { SettingsComponent } from './topbar/settings/settings.component';
 import { HttpClientModule } from '@angular/common/http';
+import { WatchlistComponent } from './topbar/watchlist/watchlist.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     CategoriesComponent,
     SearchComponent,
     SettingsComponent,
+    WatchlistComponent,
   ],
   imports: [
     BrowserModule,
