@@ -31,3 +31,6 @@ import { SettingsComponent } from './settings/settings.component';
     MatIconModule
   ],
   providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
