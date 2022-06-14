@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'shit-monkey',
+  selector: 'topbar-nav',
   templateUrl: './topbar.component.html',
   styleUrls: ['./topbar.component.scss']
 })
