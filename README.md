@@ -2,10 +2,9 @@
 
 ## Setting up for development
 1. Install node: https://nodejs.org/en/download/
-2. Install GitHub Desktop: https://desktop.github.com/
-3. Install Angular CLI `npm install -g @angular/cli`
-4. Run `npm i` to install dependencies
-5. Run `npm start` to run dev server and launch electron application
+2. Install Angular CLI `npm install -g @angular/cli`
+3. Run `npm i` to install dependencies
+4. Run `npm start` to run dev server and launch electron application
 
 
 ## Build
@@ -19,7 +18,3 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests 
-
-## Packaging for production
-
-https://github.com/electron/electron-packager 
