@@ -6,7 +6,7 @@ let mainWindow;
 
 function createWindow () {
   mainWindow = new BrowserWindow({
-    width: 1280,
+    width: 1600,
     height: 900,
     webPreferences: {
       nodeIntegration: true
