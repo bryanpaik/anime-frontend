@@ -11,6 +11,7 @@ import { FriendsComponent } from './friends/friends.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { SearchComponent } from './search/search.component';
 import { SettingsComponent } from './settings/settings.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { SettingsComponent } from './settings/settings.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
+    HttpClientModule,
     MatIconModule
   ],
   providers: [],
