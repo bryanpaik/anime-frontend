@@ -6,6 +6,7 @@ import { HomeComponent } from './topbar/home/home.component';
 import { SearchComponent } from './topbar/search/search.component';
 import { SettingsComponent } from './topbar/settings/settings.component';
 import { TopbarComponent } from './topbar/topbar.component';
+import { VideoPlayerComponent } from './video-player/video-player.component';
 import { WatchlistComponent } from './topbar/watchlist/watchlist.component';
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'categories', component: CategoriesComponent},
   { path: 'friends', component: FriendsComponent},
   { path: 'settings', component: SettingsComponent},
-  { path: 'search', component: SearchComponent}
+  { path: 'search', component: SearchComponent},
+  { path: 'videoplayer', component: VideoPlayerComponent}
 ];
 
 @NgModule({
@@ -23,4 +25,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const routingComponents = [WatchlistComponent, TopbarComponent, HomeComponent, CategoriesComponent, FriendsComponent,
-SettingsComponent, SearchComponent]
+SettingsComponent, SearchComponent, VideoPlayerComponent]
