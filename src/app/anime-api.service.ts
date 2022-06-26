@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { IAnimeListing } from './utils/interfaces/animeListing';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -15,4 +17,13 @@ export class AnimeApiService {
       console.log(JSON.stringify(response));
     });
   }
+
+  getAnime(name: string): Observable<IAnimeListing[]> {
+    return this.http.get<IAnimeListing[]>(`${this.baseUrl}/api/animix/search?animeName=${name}`);
+  }
+
+  getEpisodes(link: string): Observable<IAnimeListing[]> {
+    return this.http.get<IAnimeListing[]>(`${this.baseUrl}/api/animix/getEpisodes?link=${link}`);
+  }
+
 }
