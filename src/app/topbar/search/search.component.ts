@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { AnimeApiService } from 'src/app/anime-api.service';
 import { IAnimeListing } from 'src/app/utils/interfaces/animeListing';
+import { AnimeApiService } from 'src/app/utils/services/anime-api.service';
 
 @Component({
   selector: 'app-search',
