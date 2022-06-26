@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AnimeApiService } from './anime-api.service';
 
 
 @Component({
@@ -8,11 +7,10 @@ import { AnimeApiService } from './anime-api.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private animeApi: AnimeApiService) {}
+  constructor() {}
 
   title = 'anime-frontend';
 
   ngOnInit(){
-    this.animeApi.getStatus();
   }
 }

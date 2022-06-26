@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CategoriesComponent } from './topbar/categories/categories.component';
-import { FriendsComponent } from './topbar/friends/friends.component';
-import { HomeComponent } from './topbar/home/home.component';
-import { SearchComponent } from './topbar/search/search.component';
-import { SettingsComponent } from './topbar/settings/settings.component';
-import { TopbarComponent } from './topbar/topbar.component';
-import { VideoPlayerComponent } from './video-player/video-player.component';
-import { WatchlistComponent } from './topbar/watchlist/watchlist.component';
+import { CategoriesComponent } from './components/topbar/categories/categories.component';
+import { FriendsComponent } from './components/topbar/friends/friends.component';
+import { HomeComponent } from './components/topbar/home/home.component';
+import { SearchComponent } from './components/topbar/search/search.component';
+import { SettingsComponent } from './components/topbar/settings/settings.component';
+import { TopbarComponent } from './components/topbar/topbar.component';
+import { VideoPlayerComponent } from './components/video-player/video-player.component';
+import { WatchlistComponent } from './components/topbar/watchlist/watchlist.component';
 
 const routes: Routes = [
   { path: 'watchlist', component: WatchlistComponent},
