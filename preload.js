@@ -1,9 +1,9 @@
-const customTitlebar = require("custom-electron-titlebar");
+const { Titlebar, Color } = require("custom-electron-titlebar");
 
 window.addEventListener('DOMContentLoaded', () => {
   // Title bar implemenation
-  new customTitlebar.Titlebar({
+  new Titlebar({
     menu: null,
-    backgroundColor: customTitlebar.Color.TRANSPARENT
+    backgroundColor: Color.TRANSPARENT
   });
 });
