@@ -4,6 +4,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // Title bar implemenation
   new Titlebar({
     menu: null,
-    backgroundColor: Color.TRANSPARENT
+    backgroundColor: Color.fromHex("#262626")
   });
 });
