@@ -9,7 +9,7 @@ import { AnimeApiService } from 'src/app/utils/services/anime-api.service';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  public searchResult: IAnimeListing[];
+  public searchResult: IAnimeListing[] = [];
   public displayedColumns: string[] = ['name'];
   public searchForm = this.formBuilder.group({
     search: null,

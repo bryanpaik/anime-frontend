@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from "@angular/common";
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule, routingComponents} from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { WatchlistComponent } from './components/topbar/watchlist/watchlist.component';
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AnimeCardListComponent } from './components/anime-card-list/anime-card-list.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SearchComponent,
     SettingsComponent,
     WatchlistComponent,
+    AnimeCardListComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

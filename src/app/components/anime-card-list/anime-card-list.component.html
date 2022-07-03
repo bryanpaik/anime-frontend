@@ -1,0 +1,12 @@
+<mat-grid-list cols="6">
+  <mat-grid-tile role="listitem" *ngFor="let res of results">
+    <div class="mat-elevation-z4" matRipple>
+      <mat-card (click)="redirectToAnime(res)" class="mat-card mat-elevation-z4">
+        <mat-card-content class="anime-card">
+          <img mat-card-md-image [src]="res.image">
+          <p>{{res.name}}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
