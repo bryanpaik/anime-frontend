@@ -9,6 +9,8 @@ import { IAnimeListing } from 'src/app/utils/interfaces/animeListing';
 })
 export class AnimeCardListComponent implements OnInit {
   @Input() results: IAnimeListing[];
+  @Input() columns: number;
+
   centered = false;
   disabled = false;
   unbounded = false;
