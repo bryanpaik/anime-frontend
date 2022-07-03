@@ -1,11 +1,20 @@
-<div layout="row" layout-wrap>
+<div class="video-player" layout="row" layout-wrap>
   <iframe
-  width="1280"
-  height="720"
-  [src]="link"
-  allowfullscreen="true"
-  class="player"
-  frameBorder="0">
-</iframe>
+    id="video-window"
+    width="1280"
+    height="720"
+    [src]="link"
+    allowfullscreen="true"
+    frameBorder="0">
+  </iframe>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Select the episode</mat-label>
+    <mat-select (selectionChange)="onSelect($event)">
+      <mat-option *ngFor="let ep of episodes" [value]="ep">{{"Episode " + ep.episode}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <h2>{{title}}</h2>
 
 </div>

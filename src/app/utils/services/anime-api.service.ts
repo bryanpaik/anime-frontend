@@ -26,4 +26,8 @@ export class AnimeApiService {
     return this.http.get<IAnimeListing[]>(`${this.baseUrl}/api/animix/getEpisodes?link=${link}`);
   }
 
+  getApiLink(link: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/api/animix/apiLink?link=${link}`);
+  }
+
 }
