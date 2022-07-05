@@ -1,0 +1,25 @@
+<div class="login-box">
+  <h1 mat-dialog-title>Create an Account</h1>
+  <div mat-dialog-content>
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+      <mat-error *ngIf="invalidEmail">
+        Invalid Email!
+      </mat-error>
+      <mat-error *ngIf="passwordMismatch">
+        Password does not match!
+      </mat-error>
+      <mat-form-field>
+        <input matInput placeholder="Email" [(ngModel)]="username" name="username" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" placeholder="Password" [(ngModel)]="password" name="password" required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="password" placeholder="Confirm Password" [(ngModel)]="confirmPassword" name="confirmPassword" required>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" [disabled]="!loginForm.form.valid">Register</button>
+    </form>
+  </div>
+</div>

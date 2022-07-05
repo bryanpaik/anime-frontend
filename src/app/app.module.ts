@@ -15,6 +15,8 @@ import { WatchlistComponent } from './components/topbar/watchlist/watchlist.comp
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AnimeCardListComponent } from './components/anime-card-list/anime-card-list.component';
+import { LoginComponent } from './components/login/login.component';
+import { CreateAccountComponent } from './components/create-account/create-account.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { AnimeCardListComponent } from './components/anime-card-list/anime-card-
     SettingsComponent,
     WatchlistComponent,
     AnimeCardListComponent,
+    LoginComponent,
+    CreateAccountComponent,
   ],
   imports: [
     BrowserModule,
