@@ -1,0 +1,18 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <!-- <span><mat-icon>eco</mat-icon></span> -->
+
+  <div class="spacer"></div>
+
+  <div class="topbar-items">
+    <a mat-button routerLink="home">Home</a>
+    <!-- <a mat-button routerLink="watchlist">Watchlist</a>
+    <a mat-button routerLink="categories">Categories</a>
+    <a mat-button routerLink="friends">Friends</a> -->
+    <a mat-button routerLink="search">Search</a>
+    <!-- <a mat-button routerLink="settings">Settings</a> -->
+    <a mat-button *ngIf="!loggedIn" (click)="login()">Login</a>
+    <a mat-button *ngIf="loggedIn" (click)="logout()">Logout</a>
+    <a mat-button *ngIf="!loggedIn" (click)="createAccount()">Create Account</a>
+  </div>
+
+</mat-toolbar>

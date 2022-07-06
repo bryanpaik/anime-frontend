@@ -1,0 +1,17 @@
+<div class="login-box">
+  <h1 mat-dialog-title>Login</h1>
+  <div mat-dialog-content>
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+      <mat-error *ngIf="!loginValid">
+        The username and password were not recognized
+      </mat-error>
+      <mat-form-field>
+        <input matInput placeholder="Email" [(ngModel)]="username" name="username" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" placeholder="Password" [(ngModel)]="password" name="password" required>
+      </mat-form-field>
+      <button mat-raised-button color="primary" [disabled]="!loginForm.form.valid">Login</button>
+    </form>
+  </div>
+</div>
