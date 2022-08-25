@@ -5,7 +5,7 @@ import { IAnimeListing } from 'src/app/utils/interfaces/animeListing';
 @Component({
   selector: 'anime-card-list',
   templateUrl: './anime-card-list.component.html',
-  styleUrls: ['./anime-card-list.component.scss']
+  styleUrls: ['./anime-card-list.component.scss'],
 })
 export class AnimeCardListComponent implements OnInit {
   @Input() results: IAnimeListing[];
@@ -15,13 +15,11 @@ export class AnimeCardListComponent implements OnInit {
   disabled = false;
   unbounded = false;
 
-  constructor(public router: Router) { }
+  constructor(public router: Router) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   redirectToAnime(results: IAnimeListing) {
     this.router.navigateByUrl('/videoplayer', { state: { results } });
   }
-
 }

@@ -1,20 +1,31 @@
 <div class="video-player" layout="row" layout-wrap>
+  <h2 class="remove-whitespace">{{ title }}</h2>
   <iframe
     id="video-window"
     width="1280"
     height="720"
     [src]="link"
     allowfullscreen="true"
-    frameBorder="0">
+    frameBorder="0"
+  >
   </iframe>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu for show">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button (click)="addToQueue()" mat-menu-item>
+      <mat-icon>add_to_queue</mat-icon>
+      <span>Queue</span>
+    </button>
+  </mat-menu>
 
   <mat-form-field appearance="fill">
     <mat-label>Select the episode</mat-label>
     <mat-select (selectionChange)="onSelect($event)">
-      <mat-option *ngFor="let ep of episodes" [value]="ep">{{"Episode " + ep.episode}}</mat-option>
+      <mat-option *ngFor="let ep of episodes" [value]="ep">{{
+        "Episode " + ep.episode
+      }}</mat-option>
     </mat-select>
   </mat-form-field>
-
-  <h2>{{title}}</h2>
-
 </div>
