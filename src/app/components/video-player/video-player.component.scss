@@ -2,6 +2,13 @@
   display: flex; /* or inline-flex */
   flex-wrap: wrap;
   gap: 15px;
-  margin : 10px 15% 0;
-  align-items: center;
+  margin: 10px 15% 0;
+  align-items: flex-start;
+}
+
+h2.remove-whitespace {
+  margin: 0;
+  padding: 0;
+  line-height: 30px;
+  height: 25px;
 }

@@ -3,14 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IAnimeListing } from '../interfaces/animeListing';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AnimeApiService {
-  baseUrl = "http://localhost:5000";
+  baseUrl = 'http://localhost:5000';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getStatus() {
     return this.http.get(`${this.baseUrl}/api/status`).subscribe((response) => {
@@ -19,15 +18,18 @@ export class AnimeApiService {
   }
 
   getAnime(name: string): Observable<IAnimeListing[]> {
-    return this.http.get<IAnimeListing[]>(`${this.baseUrl}/api/animix/search?animeName=${name}`);
+    return this.http.get<IAnimeListing[]>(
+      `${this.baseUrl}/api/animix/search?animeName=${name}`
+    );
   }
 
   getEpisodes(link: string): Observable<IAnimeListing[]> {
-    return this.http.get<IAnimeListing[]>(`${this.baseUrl}/api/animix/getEpisodes?link=${link}`);
+    return this.http.get<IAnimeListing[]>(
+      `${this.baseUrl}/api/animix/getEpisodes?link=${link}`
+    );
   }
 
   getApiLink(link: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/api/animix/apiLink?link=${link}`);
   }
-
 }
