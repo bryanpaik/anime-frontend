@@ -4,7 +4,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatTableModule } from '@angular/material/table'
+import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRippleModule } from '@angular/material/core';
@@ -12,6 +12,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatOptionModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatMenuModule } from '@angular/material/menu';
 
 const MaterialComponents = [
   MatToolbarModule,
@@ -26,11 +27,12 @@ const MaterialComponents = [
   MatSelectModule,
   MatSlideToggleModule,
   MatOptionModule,
-  MatDialogModule
-]
+  MatDialogModule,
+  MatMenuModule,
+];
 
 @NgModule({
-  imports: [ MaterialComponents ],
-  exports: [ MaterialComponents ]
+  imports: [MaterialComponents],
+  exports: [MaterialComponents],
 })
-export class MaterialModule { }
+export class MaterialModule {}
