@@ -1,5 +1,6 @@
 # AnimeFrontend
 Electron-Angular application used to watch anime
+
 Needs to be connected to backend here: https://github.com/bryanpaik/anime-backend
 
 ## Setting up for development
