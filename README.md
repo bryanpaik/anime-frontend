@@ -13,7 +13,7 @@ Front end for https://github.com/bryanpaik/anime-backend
 2. Install GitHub Desktop: https://desktop.github.com/
 3. Install Angular CLI `npm install -g @angular/cli`
 4. Run `npm i` to install dependencies
-5. Run `npm start` to run dev server and launch electron application
+5. Run `npm start` to launch electron application
 
 
 ## Build
