@@ -1,1 +1,8 @@
-<p>settings works!</p>
+<div class="ipAddress">
+  <form [formGroup]="ipForm" (ngSubmit)="writeIP()">
+    <mat-form-field class="example-full-width">
+      <input type="text" formControlName="ipAddress" id="ipAddress" matInput placeholder="IP Address" name="ipAddress">
+      <button type="submit" matSuffix mat-button><mat-icon >done</mat-icon></button>
+    </mat-form-field>
+  </form>
+</div>

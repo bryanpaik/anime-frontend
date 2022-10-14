@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IpcRenderer } from 'electron';
+import { FileConstants } from '../constants/filesConstants';
 import { IAnimeListing } from '../interfaces/animeListing';
 
 @Injectable({
@@ -19,14 +20,31 @@ export class FileStorageService {
     }
   }
 
+  public async writeToFile(fileName: string, newData: any) {
+    if (this._ipc) {
+      return this._ipc.invoke('saveData', fileName, newData);
+    }
+    return null;
+  }
+
+  public async readFile(fileName: string): Promise<any> {
+    if (this._ipc) {
+      return this._ipc.invoke('loadData', fileName).then((data) => {
+        const queue: any = data || [];
+        return queue;
+      });
+    }
+    return Promise.resolve([]);
+  }
+  
   public async writeToQueue(listing: IAnimeListing) {
     if (this._ipc) {
-      return this._ipc.invoke('loadData', 'queue').then((data) => {
+      return this._ipc.invoke('loadData', FileConstants.QUEUE).then((data) => {
         const queue: IAnimeListing[] = data || [];
         queue.push(listing);
 
         if (this._ipc) {
-          return this._ipc.invoke('saveData', 'queue', queue);
+          return this._ipc.invoke('saveData', FileConstants.QUEUE, queue, 'a');
         }
         return null;
       });
@@ -36,7 +54,7 @@ export class FileStorageService {
 
   public async readQueue(): Promise<IAnimeListing[]> {
     if (this._ipc) {
-      return this._ipc.invoke('loadData', 'queue').then((data) => {
+      return this._ipc.invoke('loadData', FileConstants.QUEUE).then((data) => {
         const queue: IAnimeListing[] = data || [];
         return queue;
       });
