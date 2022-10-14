@@ -2,14 +2,17 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IAnimeListing } from '../interfaces/animeListing';
+import { FileStorageService } from './file-storage.service';
+import { FileConstants } from '../constants/filesConstants';
+import { ServerConstants } from '../constants/serverConstants';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AnimeApiService {
-  baseUrl = 'http://localhost:5000';
+  private baseUrl = '';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private fileService: FileStorageService) {}
 
   getStatus() {
     return this.http.get(`${this.baseUrl}/api/status`).subscribe((response) => {
@@ -31,5 +34,14 @@ export class AnimeApiService {
 
   getApiLink(link: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/api/animix/apiLink?link=${link}`);
+  }
+
+  writeUrl(ipAddress: string) {
+    this.fileService.writeToFile(FileConstants.SETTINGS, {ipAddress});
+    this.setUrl(`http://${ipAddress}:${ServerConstants.PORT}`) 
+  }
+  
+  setUrl(url: string) {
+    this.baseUrl = url;
   }
 }

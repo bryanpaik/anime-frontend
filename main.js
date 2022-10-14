@@ -1,4 +1,5 @@
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, ipcMain } = require('electron');
+const fs = require("fs");
 const url = require("url");
 const path = require("path");
 const { setupTitlebar, attachTitlebarToWindow } = require("custom-electron-titlebar/main");
@@ -15,6 +16,8 @@ function createWindow () {
     frame: false,
     webPreferences: {
       nodeIntegration: true,
+      contextIsolation: false,
+      enableRemoteModule: true,
       preload: path.join(__dirname, "preload.js")
     }
   })
@@ -27,7 +30,7 @@ function createWindow () {
     })
   );
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
 
   mainWindow.on('closed', function () {
     mainWindow = null
@@ -45,3 +48,24 @@ app.on('window-all-closed', function () {
 app.on('activate', function () {
   if (mainWindow === null) createWindow()
 });
+
+ipcMain.handle("loadData", async (event, fileName) => {
+  const userDataPath = app.getPath("userData");
+  this.path = path.join(userDataPath, `${fileName}.json`);
+
+  fs.writeFileSync(this.path, "", { flag: "a" });
+
+  const data = fs.readFileSync(this.path);
+
+  return data.length > 1 ? JSON.parse(data) : null;
+});
+
+ipcMain.handle("saveData", async (event, fileName, data) => {
+  const userDataPath = app.getPath("userData");
+  this.path = path.join(userDataPath, `${fileName}.json`);
+
+  fs.writeFileSync(this.path, JSON.stringify(data));
+
+  return "OK";
+});
+

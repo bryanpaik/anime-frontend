@@ -43,3 +43,5 @@ Thumbs.db
 /test-results/
 /playwright-report/
 /playwright/.cache/
+
+AnimeApp-win32-x64
