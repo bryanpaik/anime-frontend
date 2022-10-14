@@ -3,6 +3,11 @@ Electron-Angular application used to watch anime
 
 Needs to be connected to backend here: https://github.com/bryanpaik/anime-backend
 
+![image](https://user-images.githubusercontent.com/74121118/195756564-7146cb66-00ad-4575-bbb6-bb9fad09cbc5.png)
+
+![image](https://user-images.githubusercontent.com/74121118/195756687-d4799a7d-8abd-40cc-b3bb-f2bb60021884.png)
+
+
 ## Setting up for development
 1. Install node: https://nodejs.org/en/download/
 2. Install GitHub Desktop: https://desktop.github.com/
