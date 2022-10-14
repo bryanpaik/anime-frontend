@@ -13,7 +13,9 @@ Needs to be connected to backend here: https://github.com/bryanpaik/anime-backen
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+npx electron-packager ./ AnimeApp --platform=win32 --overwrite
+
+https://github.com/electron/electron-packager 
 
 ## Running unit tests
 
@@ -22,8 +24,3 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests 
-
-## Packaging for production
-
-npx electron-packager ./ AnimeApp --platform=win32 --overwrite
-https://github.com/electron/electron-packager 
