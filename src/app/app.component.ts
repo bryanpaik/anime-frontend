@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FileConstants } from './utils/constants/filesConstants';
+import { ServerConstants } from './utils/constants/serverConstants';
 import { AnimeApiService } from './utils/services/anime-api.service';
 import { FileStorageService } from './utils/services/file-storage.service';
 
@@ -17,7 +18,7 @@ export class AppComponent implements OnInit {
   ngOnInit(){
     this.fileService.readFile(FileConstants.SETTINGS).then((data) => {
       if (data) {
-        this.animeApi.setUrl(`http://${data.ipAddress}:5000`)
+        this.animeApi.setUrl(`http://${data.ipAddress}:${ServerConstants.PORT}`)
       }
     });
   }

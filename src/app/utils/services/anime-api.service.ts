@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { IAnimeListing } from '../interfaces/animeListing';
 import { FileStorageService } from './file-storage.service';
 import { FileConstants } from '../constants/filesConstants';
+import { ServerConstants } from '../constants/serverConstants';
 
 @Injectable({
   providedIn: 'root',
@@ -37,7 +38,7 @@ export class AnimeApiService {
 
   writeUrl(ipAddress: string) {
     this.fileService.writeToFile(FileConstants.SETTINGS, {ipAddress});
-    this.setUrl(`http://${ipAddress}:5000`) 
+    this.setUrl(`http://${ipAddress}:${ServerConstants.PORT}`) 
   }
   
   setUrl(url: string) {
