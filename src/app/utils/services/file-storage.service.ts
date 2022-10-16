@@ -41,8 +41,11 @@ export class FileStorageService {
     if (this._ipc) {
       return this._ipc.invoke('loadData', FileConstants.QUEUE).then((data) => {
         const queue: IAnimeListing[] = data || [];
-        queue.push(listing);
-
+       
+        if (!queue.length || data.some((item: IAnimeListing) => item.name !== listing.name)) {
+          queue.push(listing);
+        }
+        
         if (this._ipc) {
           return this._ipc.invoke('saveData', FileConstants.QUEUE, queue, 'a');
         }
@@ -60,5 +63,19 @@ export class FileStorageService {
       });
     }
     return Promise.resolve([]);
+  }
+
+  public async removeFromQueue(name: String) {
+    if (this._ipc) {
+      return this._ipc.invoke('loadData', FileConstants.QUEUE).then((data) => {
+        const queue: IAnimeListing[] = data.filter((item: IAnimeListing) => item.name != name) || [];
+        
+        if (this._ipc) {
+          return this._ipc.invoke('saveData', FileConstants.QUEUE, queue, 'a');
+        }
+        return null;
+      });
+    }
+    return null;
   }
 }

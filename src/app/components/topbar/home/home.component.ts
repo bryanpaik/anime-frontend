@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IAnimeListing } from 'src/app/utils/interfaces/animeListing';
 import { FileStorageService } from 'src/app/utils/services/file-storage.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { FileStorageService } from 'src/app/utils/services/file-storage.service'
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  queue: any;
+  queue: IAnimeListing[] = [];
   constructor(private fileStore: FileStorageService) {}
 
   ngOnInit(): void {

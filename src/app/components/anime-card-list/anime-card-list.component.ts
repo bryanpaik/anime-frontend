@@ -22,4 +22,8 @@ export class AnimeCardListComponent implements OnInit {
   redirectToAnime(results: IAnimeListing) {
     this.router.navigateByUrl('/videoplayer', { state: { results } });
   }
+
+  onResize(event: any) {
+    this.columns = Math.min(Math.floor(event.target.innerWidth / 250));
+  }
 }
