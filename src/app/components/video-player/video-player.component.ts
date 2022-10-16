@@ -59,4 +59,9 @@ export class VideoPlayerComponent implements OnInit {
       link: this.state.results.link,
     });
   }
+
+  removeFromQueue() {
+    this.fileStore.removeFromQueue(this.title);
+  }
+
 }
