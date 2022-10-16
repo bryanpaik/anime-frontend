@@ -42,7 +42,7 @@ export class FileStorageService {
       return this._ipc.invoke('loadData', FileConstants.QUEUE).then((data) => {
         const queue: IAnimeListing[] = data || [];
        
-        if (!data || data.some((item: IAnimeListing) => item.name !== listing.name)) {
+        if (!queue.length || data.some((item: IAnimeListing) => item.name !== listing.name)) {
           queue.push(listing);
         }
         

@@ -10,6 +10,7 @@ import { VideoPlayerComponent } from './components/video-player/video-player.com
 import { WatchlistComponent } from './components/topbar/watchlist/watchlist.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: "/home", pathMatch: 'full'},
   { path: 'watchlist', component: WatchlistComponent},
   { path: 'home', component: HomeComponent},
   { path: 'categories', component: CategoriesComponent},

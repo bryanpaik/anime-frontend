@@ -1,4 +1,6 @@
 <div class="page-padding">
-    <h2 style="margin: 0 0 0">Queue</h2>
-    <anime-card-list [results]="queue" [columns]="6"></anime-card-list>
+    <div *ngIf="queue.length">
+        <h2 style="margin: 0 0 0">Queue</h2>
+        <anime-card-list [results]="queue" [columns]="6"></anime-card-list>
+    </div>
 </div>
