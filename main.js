@@ -12,6 +12,7 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     width: 1920,
     height: 1080,
+    icon: __dirname + '/src/favicon.ico',
     autoHideMenuBar: true,
     frame: false,
     webPreferences: {
@@ -30,7 +31,7 @@ function createWindow () {
     })
   );
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 
   mainWindow.on('closed', function () {
     mainWindow = null
