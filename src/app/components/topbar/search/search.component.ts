@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { IAnimeListing } from 'src/app/utils/interfaces/animeListing';
-import { AnimeApiService } from 'src/app/utils/services/anime-api.service';
+import { MalApiService } from 'src/app/utils/services/mal-api.service';
 
 @Component({
   selector: 'app-search',
@@ -16,17 +16,18 @@ export class SearchComponent implements OnInit {
   });
 
   constructor(
-    private animeApi: AnimeApiService,
+    private malApi: MalApiService,
     private formBuilder: FormBuilder
   ) {}
 
   ngOnInit(): void {}
 
   findShow() {
-    this.animeApi
-      .getAnime(this.searchForm.controls['search'].value)
-      .subscribe((data) => {
-        this.searchResult = data;
+    this.malApi
+      .searchAnime(this.searchForm.controls['search'].value)
+      .subscribe((result) => {
+        console.log(result);
+        this.searchResult = this.malApi.convertListing(result);
       });
   }
 }
